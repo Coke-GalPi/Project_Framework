@@ -1,12 +1,12 @@
 {% extends "components/layout.html" %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Sign in{% endblock %}
 {% block content %}
 <div class="row m-sm-5 m-3">
-    <h1 class="col">Proyecto Framework</h1>
+    <h2 class="col">Sign in</h2>
 </div>
 
-<section class="row justify-content-center">
+<section class="row justify-content-center ">
     <form method="post" action="/user" class="col-sm-5 col-10">
         <div class="mb-3">
             <label for="exampleInputUsername" class="form-label">Username</label>
@@ -16,7 +16,7 @@
             <label for="exampleInputPassword1" class="form-label">Password</label>
             <input name="password_user" type="password" class="form-control" id="exampleInputPassword1" required />
         </div>
-        <button type="submit" class="btn btn-primary">Ingresar</button>
+        <button type="submit" class="btn btn-secondary">Ingresar</button>
     </form>
 </section>
 {% endblock %}

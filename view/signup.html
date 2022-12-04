@@ -3,10 +3,10 @@
 {% block title %}Sign up{% endblock %}
 {% block content %}
 <div class="row m-md-5 m-3">
-	<h1 class="col">Ingresar Nuevo Usuario</h1>
+	<h2 class="col">Sign up</h2>
 </div>
 
-<form method="post" action="/data-processing" class="row g-3 mx-sm-5 mx-2">
+<form method="post" action="/data-processing" class="row g-3 mx-sm-5 mx-2 text-center">
 	<div class="col-md-4">
 		<label for="validationDefault01" class="form-label">Nombre</label>
 		<input name="firstname" type="text" class="form-control" id="validationDefault01" required />
@@ -21,7 +21,7 @@
 	</div>
 	<div class="col-md-4">
 		<label for="validationDefault02" class="form-label">Numero de Contacto</label>
-		<input name="fono" type="number" maxlength="9" class="form-control" id="validationDefault02" required/>
+		<input name="fono" type="number" min="111111111" max="999999999" maxlength="9" class="form-control" id="validationDefault02" required/>
 	</div>
 	<div class="col-md-4">
 		<label for="validationDefaultUsername" class="form-label">Usuario</label>
@@ -31,12 +31,12 @@
 			<span class="input-group-text" id="inputGroupPrepend2">@estuantesunap.cl</span>
 		</div>
 	</div>
-	<div class="col-md-3">
+	<div class="col-md-4">
 		<label for="validationDefault05" class="form-label">Password</label>
 		<input name="password_user" type="password" class="form-control" id="validationDefault05" required />
 	</div>
 	<div class="col-12">
-		<button class="btn btn-primary" type="submit">Ingresar</button>
+		<button class="btn btn-secondary" type="submit">Ingresar</button>
 	</div>
 </form>
 {% endblock %}

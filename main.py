@@ -8,7 +8,11 @@ template = Jinja2Templates(directory="./view")
 
 @app.get("/", response_class=HTMLResponse)
 def root(req: Request):
-    return template.TemplateResponse("login.html", {"request": req})
+    return template.TemplateResponse("index.html", {"request": req})
+
+@app.get("/signin", response_class=HTMLResponse)
+def root(req: Request):
+    return template.TemplateResponse("signin.html", {"request": req})
 
 @app.get("/signup", response_class=HTMLResponse)
 def signup(req: Request):
