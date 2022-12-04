@@ -22,27 +22,32 @@
 
         Asegurar tener la libreria "virtualenv" para crear el entorno.
 
-            Comando para crear el entrono virtual: "virtualenv -p python3 [nombre del entorno]"
+            Comando para crear el entrono virtual: "virtualenv -p python3 venv"
 
-            Comando para entrar: ".\[nombre entrono]\Scripts\activate"
+            Comando para entrar: ".\venv\Scripts\activate"
 
             Comando para salir: "deactivate"
 
-    Una vez dentro del entrono virtual debe instalar las siguientes librerias:
+    2.- Una vez dentro del entrono virtual debe instalar las siguientes librerias:
 
-    2.- Debe instalar la libreria de fastapi por terminal de VS Code
+        Para ahorar los pasos siguientes puedes usar el comando: "pip install -r .\requirements.txt"
+        para que se instalen las librerias en la misma version en la que se empieza la programación de este codigo.
+
+        En caso contrario segur con los pasos:
+
+    3.- Debe instalar la libreria de fastapi por terminal de VS Code
 
         pip install fastapi
 
-    3.- Debe instalar uvicorn
+    4.- Debe instalar uvicorn
 
         pip install uvicorn
 
-    4.- Esto instalará uvicorn con dependencias mínimas (Python puro).
+    5.- Esto instalará uvicorn con dependencias mínimas (Python puro).
 
         pip install uvicorn[standard] 
 
-    5.- Otras librerias 
+    6.- Otras librerias 
 
         pip install autopep8
 
