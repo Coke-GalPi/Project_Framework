@@ -1,6 +1,11 @@
-# Este es el repositorio para el proyecto de FLP, con el framework FastAPI
+# Proyecto FastAPI
 
-## Descaragar VS Code y Python 3.10.8
+## Autor:
+
+    Coke-GalPi
+
+
+## Descaragar VS Code, Python 3.10.8, DBeaver y PostgreSQL
     
     VS Code:
 
@@ -10,7 +15,15 @@
 
         https://www.python.org/ftp/python/3.10.8/python-3.10.8-amd64.exe
 
-    Extensiones:
+    DBeaver gestor de Base de Datos
+
+        https://dbeaver.io/files/dbeaver-ce-latest-x86_64-setup.exe
+
+    PostgresSQL:
+
+        https://www.enterprisedb.com/postgresql-tutorial-resources-training?uuid=7ce7e93f-e1eb-4e42-85fa-84c0c98859ee&campaignId=7012J000001h3GiQAI
+
+    Extensiones para VS Code:
 
         Python Extension Pack.
 

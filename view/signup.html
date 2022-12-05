@@ -6,37 +6,38 @@
 	<h2 class="col">Sign up</h2>
 </div>
 
-<form method="post" action="/data-processing" class="row g-3 mx-sm-5 mx-2 text-center">
-	<div class="col-md-4">
-		<label for="validationDefault01" class="form-label">Nombre</label>
-		<input name="firstname" type="text" class="form-control" id="validationDefault01" required />
-	</div>
-	<div class="col-md-4">
-		<label for="validationDefault02" class="form-label">Apellidos</label>
-		<input name="lastname" type="text" class="form-control" id="validationDefault02" required />
-	</div>
-	<div class="col-md-4">
-		<label for="validationDefault02" class="form-label">RUT</label>
-		<input name="rut" type="text" class="form-control" id="validationDefault02" required maxlength="10"/>
-	</div>
-	<div class="col-md-4">
-		<label for="validationDefault02" class="form-label">Numero de Contacto</label>
-		<input name="fono" type="number" min="111111111" max="999999999" maxlength="9" class="form-control" id="validationDefault02" required/>
-	</div>
-	<div class="col-md-4">
-		<label for="validationDefaultUsername" class="form-label">Usuario</label>
-		<div class="input-group">
-			<input name="username" type="text" class="form-control" id="validationDefaultUsername"
-				aria-describedby="inputGroupPrepend2" required />
-			<span class="input-group-text" id="inputGroupPrepend2">@estuantesunap.cl</span>
+<div class="box-form justify-content-center mb-4 row">
+	<form method="post" action="/data-processing" class="col-sm-5 col-10 text-center">
+		<div class="mb-2 text-center">
+			<label for="name" class="form-label">Nombre</label>
+			<input name="name" type="text" class="form-control text-center" id="name" required />
 		</div>
-	</div>
-	<div class="col-md-4">
-		<label for="validationDefault05" class="form-label">Password</label>
-		<input name="password_user" type="password" class="form-control" id="validationDefault05" required />
-	</div>
-	<div class="col-12">
-		<button class="btn btn-secondary" type="submit">Ingresar</button>
-	</div>
-</form>
+		<div class="mb-2 text-center">
+			<label for="lastname" class="form-label">Apellidos</label>
+			<input name="lastname" type="text" class="form-control text-center" id="lastname" required />
+		</div>
+		<div class="mb-2 text-center">
+			<label for="rut" class="form-label">RUT</label>
+			<input name="rut" type="text" class="form-control text-center" id="rut" required maxlength="10"/>
+		</div>
+		<div class="mb-2 text-center">
+			<label for="fono" class="form-label">Numero de Contacto</label>
+			<input name="fono" type="number" min="111111111" max="999999999" maxlength="9" class="form-control text-center" id="fono" required/>
+		</div>
+		<div class="mb-2 text-center">
+			<label for="username" class="form-label">Usuario</label>
+			<div class="input-group">	
+				<input name="username" type="text" class="form-control text-center" id="username" aria-describedby="inputGroupPrepend2" required />
+				<span class="input-group-text" id="username">@estudiantesunap.cl</span>
+			</div>
+			</div>
+		<div class="mb-2">
+			<label for="password_user" class="form-label">Password</label>
+			<input name="password_user" type="password" class="form-control text-center" id="password_user" required />
+		</div>
+		<div class="col-12">
+			<button class="btn btn-secondary" type="submit">Ingresar</button>
+		</div>
+	</form>
+</div>
 {% endblock %}
