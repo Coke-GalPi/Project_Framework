@@ -1,20 +1,86 @@
-{% extends "components/layout.html" %} 
+{% extends "components/layout_user.html" %} 
 {% block title %}User{% endblock %}
 {%block content %}
 
-<div class="row m-sm-5 m-3">
+<div class="m-sm-5 mt-1 mb-5">
 	<h2 class="col">Interfaz de usuario</h2>
 </div>
-
-<div class="row justify-content-center">
-	<div class="card col-5" style="width: 18rem">
-		<div class="card-body">
-			<h5 class="card-title">Hi <mark>{{ data_user[3] }}</mark></h5>
-			<p class="card-text">Bienvenidos al Himalaya</p>
-		</div>
-	</div>
-	<div class="">
-
+<div class="card-body m-2">
+	<h5 class="card-title">Hola, {{ data_user[2] }} {{ data_user[3] }}</h5>
+	<p class="card-text ">Bienvenidos al Himalaya</p>
+	<div class="d-flex justify-content-center">
+		<img class="m-1" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/087da57a-9c47-4cbe-b35a-a0e42cfd84ce/d4xyhdc-6958c1ca-4d04-473e-a05a-e259b5a38b7f.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzA4N2RhNTdhLTljNDctNGNiZS1iMzVhLWEwZTQyY2ZkODRjZVwvZDR4eWhkYy02OTU4YzFjYS00ZDA0LTQ3M2UtYTA1YS1lMjU5YjVhMzhiN2YuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.jchjpzRQhTRN4WpRZfSNY2NTK-rW8ZBoBxzMwWYA4GM" alt="meme" width="50">
+		<img class="m-1"  src="https://i.pinimg.com/originals/f2/b2/2c/f2b22cf0f260a007a4c1edcce26934d9.gif" alt="meme-2" width="50">
 	</div>
 </div>
+
+<div class="mb-3 row gap-3">
+	<p class="d-flex justify-content-center">
+		<button class="btn btn-primary m-2" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Ingresar Documentos</button>
+		<button class="btn btn-info m-2" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Buscar Documentos</button>
+	</p>
+	<div class="row">
+		<div class="col">
+			<div class="collapse multi-collapse" id="multiCollapseExample1">
+				<div class="card card-body">
+					<!--Content Insert-->
+					<div class="box-form justify-content-center mb-4 row">
+						<form method="post" action="/insert_doc" class="col-sm-5 col-10 text-center">
+							<div class="mb-3 text-center">
+								<label for="type_doc" class="form-label">Tipo de documento: </label>
+								<input name="type_doc" type="text" class="form-control text-center" id="type_doc" required />
+								<label for="teacher_doc" class="form-label">Profesor: </label>
+								<input name="teacher_doc" type="text" class="form-control text-center" id="teacher_doc" required />
+								<label for="name_doc" class="form-label">Nombre del documento: </label>
+								<input name="name_doc" type="text" class="form-control text-center" id="name_doc" required />
+								<label for="theme_doc" class="form-label">Tema del documento: </label>
+								<input name="theme_doc" type="text" class="form-control text-center" id="theme_doc" required />
+								<label for="file_doc" class="form-label">Seleccione el documento: </label>
+								<input name="file_doc" type="text" class="form-control text-center" id="file_doc"/>
+							</div>
+							<div class="col-12 justify-content-center mt-1">
+								<button class="btn btn-success" type="submit">Ingresar</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col">
+			<div class="collapse multi-collapse" id="multiCollapseExample2">
+				<div class="card card-body">
+					<!--Content Search-->
+					<div class="box-form justify-content-center mb-4 row">
+						<form method="get" action="#" class="col-sm-5 col-10 text-center">
+							<div class="mb-2 text-center">
+								<label for="theme" class="form-label">Tema a buscar</label>
+								<input name="theme" type="text" disabled class="form-control text-center" id="theme" required />
+							</div>
+							<div class="col-12 justify-content-center">
+								<button class="btn btn-success" disabled type="submit">Ingresar</button>
+								<button class="btn btn-warning" disabled type="reset">Limpiar</button>
+							</div>
+						</form>
+					</div>
+					<div class="m-1">
+						<table class="table table-hover text-center">
+							<thead>
+								<tr>
+									<th scope="col">Tipo</th>
+									<th scope="col">Nombre</th>
+									<th scope="col">Tema</th>
+									<th scope="col">Documento</th>
+								</tr>
+							</thead>
+							<tbody>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 {% endblock %}
