@@ -23,8 +23,11 @@ def root(req: Request):
 @app.get("/signin", response_class=HTMLResponse) # Login
 def signin(req: Request):
     return template.TemplateResponse("signin.html", {"request": req})
+@app.post("/signin", response_class=HTMLResponse) # Login
+def signin(req: Request):
+    return template.TemplateResponse("signin.html", {"request": req})
 
-@app.post("/user")
+@app.post("/user")      # access user
 async def user(req: Request, username: str = Form(), password_user: str = Form()):
     verify = check_data_user(username+"@estudiantesunap.cl", password_user)
     if verify:
@@ -34,25 +37,28 @@ async def user(req: Request, username: str = Form(), password_user: str = Form()
 @app.get("/signup", response_class=HTMLResponse) # Registro de nuevo Usuario
 def signup(req: Request):
     return template.TemplateResponse("signup.html", {"request": req})
-@app.post("/data_users")
+@app.post("/signup", response_class=HTMLResponse) # Registro de nuevo Usuario
+def signup(req: Request):
+    return template.TemplateResponse("signup.html", {"request": req})
+
+@app.post("/data_users")  # insert new user
 async def data_users(name: str = Form(), lastname: str = Form(), rut: str = Form(), 
                 fono: str = Form(), username: str = Form(), password_user: str = Form()):
     data_user = [rut, name, lastname, fono, username+"@estudiantesunap.cl", generate_password_hash(password_user)]
     dao.insert_new_User(data_user)
     return RedirectResponse("/")
 
-@app.post("/insert_doc")
+@app.post("/insert_doc")  # insert new doc
 async def insert_doc(type_doc: str = Form(), teacher_doc: str = Form(), name_doc: str = Form(),
                     theme_doc: str = Form(), file_doc: str = Form()):
     data_document = [type_doc, teacher_doc, name_doc, theme_doc, file_doc]
     dao.insert_new_Document(data_document)
-    return RedirectResponse("/user")
+    return RedirectResponse("/signin")
 
-@app.get("/search_theme")
+@app.get("/search_theme")   # search of doc
 def search_theme(req: Request, theme: str = Form()):
     data_doc = dao.search_document(theme)
     return data_doc
-
 
 @app.get("/contact", response_class=HTMLResponse) # contacto
 def contact(req: Request):
